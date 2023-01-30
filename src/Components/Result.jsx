@@ -12,7 +12,7 @@ const Result = ({ weatherData, historyData, historySearch }) => {
     <div className="grid grid-cols-4 shadow-lg mt-5 p-2">
       <div className="col-span-1 border-r-2">
         <span className="text-center block font-bold">History</span>
-        <ul>
+        <ul className="pl-2">
           {historyItems}
         </ul>
       </div>
