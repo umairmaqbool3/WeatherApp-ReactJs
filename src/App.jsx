@@ -1,6 +1,4 @@
-import React from "react";
-import { useEffect } from "react";
-import { useState } from "react";
+import React,{useState} from "react";
 import Result from "./Components/Result";
 import Search from "./Components/Search";
 import axios from "axios";
@@ -13,22 +11,6 @@ const App = () => {
   const changeSearch = (value) => {
     setSearch(value);
   };
-
-  // const getWeatherData = () =>{
-  //   axios.get(
-  //         `https://api.openweathermap.org/data/2.5/weather?q=${search}&appid=3265874a2c77ae4a04bb96236a642d2f&units=metric`
-  //   )
-  //   .then(
-  //     (response) =>{
-  //       console.log(response)
-  //     }
-  //   )
-  //   .catch(
-  //     (error) => {
-  //       console.log(error)
-  //     }
-  //   )
-  // }
 
   const searchWeatherHandler = () => {
     if (search !== "") {
@@ -87,6 +69,17 @@ const App = () => {
         historyData={history}
         historySearch={historySearchHandler}
       />
+
+      <div className="container shadow-lg p-3">
+        { 
+          history.map(
+            (item, index) => {
+              return <li className="text-2xl cursor-pointer" key={index}>{item}</li>
+            }
+          )
+        }
+      </div>
+
     </div>
   );
 };
