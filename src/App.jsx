@@ -70,7 +70,7 @@ const App = () => {
         historySearch={historySearchHandler}
       />
 
-      <div className="container shadow-lg p-3">
+      <div className="container w-full grid md:grid-cols-4 gap-4 shadow-lg p-3">
         { 
           history.map(
             (item, index) => {
