@@ -70,11 +70,13 @@ const App = () => {
         historySearch={historySearchHandler}
       />
 
-      <div className="container w-full grid md:grid-cols-4 gap-4 shadow-lg p-3">
+      <div className="w-full grid md:grid-cols-3 gap-4 shadow-lg p-3">
         { 
           history.map(
             (item, index) => {
-              return <li className="text-2xl cursor-pointer" key={index}>{item}</li>
+              return <div className="text-2xl border border-black cursor-pointer p-4" key={index}>
+                  <h2 className="text-center" onClick={() => historySearchHandler(item)}>{item}</h2>
+                </div>
             }
           )
         }
