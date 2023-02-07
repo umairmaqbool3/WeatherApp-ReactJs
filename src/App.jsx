@@ -70,6 +70,7 @@ const App = () => {
         historySearch={historySearchHandler}
       />
 
+      <h2 className=" text-3xl text-center block font-bold mt-2">History</h2>
       <div className="w-full grid md:grid-cols-3 gap-4 shadow-lg p-3">
         { 
           history.map(
