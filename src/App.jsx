@@ -7,6 +7,7 @@ const App = () => {
   const [search, setSearch] = useState("");
   const [weather, setWeather] = useState([]);
   const [history, setHistory] = useState([]);
+  const [bookmarks, setBookmarks] = useState([])
 
   const changeSearch = (value) => {
     setSearch(value);
@@ -22,6 +23,7 @@ const App = () => {
           // console.log(response.data);
           if (history.indexOf(search) === -1) {
             setHistory([...history, search]);
+            localStorage.setItem(search, JSON.stringify(search));
           }
           setWeather(response.data);
         })
